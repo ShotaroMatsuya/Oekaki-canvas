@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- 色変更に使うライブラリで用意されているCSSを導入 https://github.com/bebraw/colorjoe -->
+    <link rel="stylesheet" href="css/colorjoe.css" />
+    <style>
+      #line-width-indicator {
+        background-image: url(images/heart.jpg);
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+      /* #button {
+      } */
+    </style>
+
+    <title>お絵かきアプリ</title>
+  </head>
+  <body>
+    <!-- <h1>お絵かきアプリ</h1> -->
+    <div>
+      <span id="layerd-canvas-area">
+        <canvas
+          id="draw-area"
+          width="400px"
+          height="400px"
+          style="border: 1px solid #000000; position: absolute"
+        ></canvas>
+        <canvas
+          id="line-width-indicator"
+          width="400px"
+          height="400px"
+          style="border: 1px solid #000000"
+        ></canvas>
+      </span>
+      <span id="color-palette"></span>
+    </div>
+    <div id="force"></div>
+    <div id="touches"></div>
+    <div>
+      太さ
+      <input
+        id="range-selector"
+        type="range"
+        value="5"
+        min="1"
+        max="10"
+        step="0.1"
+      />
+      <span id="line-width">5</span>
+    </div>
+    <div id="button">
+      <button class="one">①</button>
+      <button class="two">②</button>
+      <button class="three">③</button>
+      <button class="four">④</button>
+    </div>
+    <div>
+      <button id="clear-button">全消し</button>
+    </div>
+    <div>
+      <button id="eraser-button">消しゴムモード</button>
+    </div>
+    <!-- 色変更に使うライブラリを導入 https://github.com/bebraw/colorjoe -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/colorjoe.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script>
+      console.log('test');
+      $('#button > .one').click(function () {
+        console.log('clicked');
+        $('#line-width-indicator').css('background-image', 'url(images/1.png)');
+      });
+      $('#button > .two').click(function () {
+        $('#line-width-indicator').css(
+          'background-image',
+          'url(images/1-answer.png)'
+        );
+      });
+      $('#button > .three').click(function () {
+        $('#line-width-indicator').css('background-image', 'url(images/2.png)');
+      });
+      $('#button > .four').click(function () {
+        $('#line-width-indicator').css(
+          'background-image',
+          'url(images/2-answer.png)'
+        );
+      });
+    </script>
+  </body>
+</html>

@@ -4,6 +4,13 @@ window.addEventListener('load', () => {
   const canvas = document.querySelector('#draw-area');
   const context = canvas.getContext('2d');
 
+  // const background = new Image();
+  // background.src = '../images/white-sheet.png';
+  // // Make sure the image is loaded first otherwise nothing will draw
+  // background.onload = function () {
+  //   context.drawImage(background, 0, 0);
+  // };
+
   const canvasForWidthIndicator = document.querySelector(
     '#line-width-indicator'
   );
